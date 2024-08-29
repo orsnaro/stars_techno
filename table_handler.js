@@ -6,8 +6,15 @@ function paginationUpdate() {
 
 	paginA[0].setAttribute(
 		"href",
-		"./scores_g" + ((tablePgNo == 1 ? 2 : tablePgNo) - 1) + ".html"
+		(tablePgNo == 1 ? "index.html" : ("scores_g" + tablePgNo + ".html"))
 	); //update forward and backward
+	if (tablePgNo == 2) {
+		paginA[0].setAttribute(
+			"href",
+			"index.html"
+		);//first table has diff name : index.html
+	}
+
 	paginA[paginA.length - 1].setAttribute(
 		"href",
 		"./scores_g" +
@@ -21,7 +28,11 @@ function paginationUpdate() {
 		if (parseInt(paginA[i].innerHTML) == tablePgNo) {
 			paginA[i].setAttribute("class", "active");
 		}
-		paginA[i].setAttribute("href", "./scores_g" + i + ".html");
+		if (i == 1) {
+			paginA[i].setAttribute("href", "index.html");
+		} else {
+			paginA[i].setAttribute("href", "./scores_g" + i + ".html");
+		}
 	}
 }
 function scoreTableSort() {
