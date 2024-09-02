@@ -1,3 +1,9 @@
+function playSound(){
+	let mySound = new Audio('./retro_load.mp3');
+	mySound.play();
+}
+
+
 function paginationUpdate() {
 	tablePgNo = parseInt(document.getElementById("page-no").innerHTML);
 	paginA = document
@@ -146,3 +152,4 @@ function scoreTableUpdate() {
 
 window.addEventListener("load", paginationUpdate);
 window.addEventListener("load", scoreTableUpdate);
+window.addEventListener("load", playSound);
