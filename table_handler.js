@@ -10,10 +10,10 @@ function paginationUpdate() {
 		.getElementsByClassName("pagination")[0]
 		.querySelectorAll("a");
 
-	paginA[0].setAttribute(
+	paginA[0].setAttribute(//update forward button
 		"href",
-		(tablePgNo == 1 ? "index.html" : ("scores_g" + tablePgNo + ".html"))
-	); //update forward and backward
+		(tablePgNo == 1 ? "index.html" : ("scores_g" + (tablePgNo-1) + ".html"))
+	); 
 	if (tablePgNo == 2) {
 		paginA[0].setAttribute(
 			"href",
@@ -21,9 +21,9 @@ function paginationUpdate() {
 		);//first table has diff name : index.html
 	}
 
-	paginA[paginA.length - 1].setAttribute(
+	paginA[paginA.length - 1].setAttribute(//update backward button
 		"href",
-		"./scores_g" +
+		"scores_g" +
 			((tablePgNo >= paginA.length - 2 ? tablePgNo - 1 : tablePgNo) + 1) +
 			".html"
 	);
