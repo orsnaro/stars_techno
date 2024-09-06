@@ -1,3 +1,6 @@
+
+# https://orsnaro.github.io/stars_techno/
+
 <link href="./scores_g1.html" rel="import" />
 
 <br>
